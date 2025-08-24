@@ -67,7 +67,7 @@ app.post('/api/register', async (req, res) => {
         user.password = await bcrypt.hash(password, salt);
         await user.save();
 
-        const verificationLink = `http://localhost:3000/api/verify-email?token=${emailToken}`;
+        const verificationLink = `https://carwash-1-23p3.onrender.com/api/verify-email?token=${emailToken}`;
         const mailOptions = {
             from: `"SpeedyClean Carwash" <${process.env.GMAIL_USER}>`,
             to: user.email,
